@@ -1,0 +1,8 @@
+#ifndef FLUIDMAX_VERSION_H_
+#define FLUIDMAX_VERSION_H_ 1
+
+#define EXT_VERSION_DATE_MONTH "08"
+#define EXT_VERSION_DATE_YEAR "2015"
+#define EXT_VERSION_NUM "20"
+
+#endif

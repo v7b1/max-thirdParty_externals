@@ -1,0 +1,25 @@
+{
+    "name": "max-third-party",
+	"author" : "",
+	"description" : "A collection of thrid party externals for max, developed over the years by various authors",
+	"homepatcher" : "",
+	"max_version_min" : "8.0", "max_version_max" : "none",
+	"name" : "@C74_PACKAGE_NAME@",
+	"os" : {
+		"macintosh" : {
+			"platform" : [ "x64", "arm64" ],
+			"min_version" : "none"
+		},
+		"windows" : {
+			"platform" : [ "x64" ],
+			"min_version" : "none"
+		}
+	},
+	"package_extra" : {
+		"reverse_domain" : "com.your.name",
+		"copyright" : "Copyright (c) 2021 Your Name"
+	},
+	"tags" : ["max", "example"],
+	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
+	"website" : "http://www.github.com/"
+}
