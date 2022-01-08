@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 279.0, 79.0, 1267.0, 480.0 ],
+		"rect" : [ 63.0, 275.0, 730.0, 427.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -754,16 +754,8 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"candicane2" : [ 0.145098039215686, 0.203921568627451, 0.356862745098039, 1.0 ],
-					"candicane3" : [ 0.290196078431373, 0.411764705882353, 0.713725490196078, 1.0 ],
-					"candicane4" : [ 0.43921568627451, 0.619607843137255, 0.070588235294118, 1.0 ],
-					"candicane5" : [ 0.584313725490196, 0.827450980392157, 0.431372549019608, 1.0 ],
-					"candicane6" : [ 0.733333333333333, 0.035294117647059, 0.788235294117647, 1.0 ],
-					"candicane7" : [ 0.87843137254902, 0.243137254901961, 0.145098039215686, 1.0 ],
-					"candicane8" : [ 0.027450980392157, 0.447058823529412, 0.501960784313725, 1.0 ],
-					"compatibility" : 1,
 					"contdata" : 1,
+					"ghostbar" : 10,
 					"id" : "obj-36",
 					"maxclass" : "multislider",
 					"numinlets" : 1,
@@ -771,11 +763,10 @@
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 31.0, 53.0, 465.0, 325.0 ],
-					"peakcolor" : [ 0.498039215686275, 0.498039215686275, 0.498039215686275, 1.0 ],
-					"setminmax" : [ 20.0, 128.0 ],
-					"settype" : 0,
+					"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
+					"setminmax" : [ 0.0, 128.0 ],
 					"size" : 25,
-					"slidercolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"spacing" : 1
 				}
 
 			}
@@ -1756,19 +1747,17 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"coldcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"hotcolor" : [ 0.003921568627451, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 0.403922, 0.403922, 0.403922, 1.0 ],
+					"coldcolor" : [ 0.0, 0.658824, 0.0, 1.0 ],
 					"id" : "obj-99",
 					"interval" : 100,
 					"maxclass" : "meter~",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"overloadcolor" : [ 0.003921568627451, 0.0, 0.0, 1.0 ],
 					"patching_rect" : [ 371.0, 41.0, 126.0, 12.0 ],
-					"tepidcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"warmcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"tepidcolor" : [ 0.6, 0.729412, 0.0, 1.0 ],
+					"warmcolor" : [ 0.85098, 0.85098, 0.0, 1.0 ]
 				}
 
 			}
@@ -1854,7 +1843,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 880.0, 274.0, 28.0, 19.0 ],
 					"text" : "ca1s"
 				}
@@ -3018,11 +3007,15 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "unit",
-				"bootpath" : "~/Documents/coding/GitHub/max-objects/max-thirdParty_externals/patchers",
+				"name" : "unit.maxpat",
+				"bootpath" : "~/Documents/coding/GitHub/max-objects/max-thirdParty_externals/externals",
 				"patcherrelativepath" : ".",
-				"type" : "maxb",
+				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "ca1s.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0
