@@ -38,7 +38,6 @@ typedef struct _svf
 
 
 void *svf_new(t_symbol *s, long ac, t_atom *av);
-//t_int *offset_perform(t_int *w);
 t_int *svf_perform(t_int *w);
 void svf_float(t_svf *x, double f);
 void svf_freq(t_svf *x, double f);
