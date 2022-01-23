@@ -214,7 +214,7 @@ void svf_dsp64(t_svf *x, t_object *dsp64, short *count, double samplerate,
 
 
 inline double sin_e(double x);
-inline double sin_e(double x)
+double sin_e(double x)
 {
     return x - (x*x*x*0.1666666666666);
 }
