@@ -34,8 +34,8 @@
 #define WINMIDI_SUPPORT 1
 //#define WITH_FLOAT 1
 
-#define snprintf _snprintf
-#define vsnprintf _vsnprintf
+//#define snprintf _snprintf
+//#define vsnprintf _vsnprintf
 #define STDIN_FILENO 0
 #define STDOUT_FILENO 1
 #define STDERR_FILENO 2
