@@ -1,6 +1,6 @@
 {
     "name": "max-thirdParty_externals",
-	"author" : "",
+	"author" : "vboehm",
 	"description" : "A collection of thrid party externals for max, developed over the years by various authors",
 	"homepatcher" : "",
 	"max_version_min" : "8.0", "max_version_max" : "none",
