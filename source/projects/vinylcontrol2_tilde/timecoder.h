@@ -24,6 +24,7 @@
 
 #include "lut.h"
 #include "pitch.h"
+#include <stdint.h>
 
 #define TIMECODER_CHANNELS 2
 
