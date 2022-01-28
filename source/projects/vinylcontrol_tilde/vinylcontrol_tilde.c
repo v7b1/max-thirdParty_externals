@@ -6,6 +6,12 @@
 #include "timecoder.h"
 #include <limits.h>
 
+//
+// Vinyl control external, using the timecoder from
+// Mark Hill's xwax-src <http://www.xwax.co.uk>
+//
+// Niklas Klügel <kluegel@in.tum.de>
+
 /*
 	make a new version of vinylcontrol~
     author: https://vboehm.net 
