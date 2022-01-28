@@ -12,8 +12,6 @@ include_directories(
 	"${MAX_SDK_JIT_INCLUDES}"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src"
 
-    # Add any additional includes here
-    # "${CMAKE_CURRENT_SOURCE_DIR}/../../include"  # e.g. if you put your includes in /source/include
 )
 
 set(FLUID_SOURCES

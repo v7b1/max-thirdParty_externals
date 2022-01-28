@@ -13,7 +13,7 @@ include_directories(
 
 
 set(PROJECT_SRC
-    "ca1s.c"
+    "${PROJECT_NAME}.c"
 )
 
 add_library( 
