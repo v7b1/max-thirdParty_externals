@@ -1,5 +1,5 @@
 # max-thirdParty_externals
-A small collection of old third party externals for MaxMSP, developed over the years by various authors. This repository serves the purpuse of keeping the sources around and making up to date versions available.
+A small collection of legacy third party externals for MaxMSP, developed over the years by various authors. This repository serves the purpuse of keeping the sources around and making up-to-date versions available.
 
 ------
 
@@ -13,6 +13,7 @@ Get compiled binaries from https://vboehm.net/downloads
 - analyzer~ by Tristan Jehan et al.
 - bob~ by Miller Puckette
 - ca1s by Jhno (John Eichenseer)
+- cverb~ by ??
 - fluidsynth~ by Peter Hanappe et al. and Norbert Schnell
 - freeverb~ by Olaf Matthes
 - gigaverb~ by Olaf Matthes
