@@ -11,6 +11,7 @@ Get compiled binaries from https://vboehm.net/downloads
 
 - 2up_svf~ by Randy Jones
 - analyzer~ by Tristan Jehan et al.
+- atari2600~ by Ron Fries and vb (not the version by Kyle Buza, but a re-creation)
 - bob~ by Miller Puckette
 - ca1s by Jhno (John Eichenseer)
 - cverb~ by ??
