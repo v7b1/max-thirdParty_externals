@@ -1,3 +1,4 @@
+if (APPLE) # this heavily relies on cocoa, so exclude from windows build
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../max-sdk-base/script/max-pretarget.cmake)
 
@@ -50,3 +51,5 @@ endif()
 
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../max-sdk-base/script/max-posttarget.cmake)
+
+endif()
