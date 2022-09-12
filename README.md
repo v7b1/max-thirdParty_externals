@@ -19,6 +19,7 @@ Get compiled binaries from https://vboehm.net/downloads
 - freeverb~ by Olaf Matthes
 - gigaverb~ by Olaf Matthes
 - rufus~ by David Zicarelli
+- s2m.wacom by Charles Gondre (macos only!)
 - vinylcontrol~ originally written for PD by Niklas Klügel
 
 For licenses and original README files please check the individual project folders.
