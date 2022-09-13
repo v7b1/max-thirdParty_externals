@@ -186,6 +186,8 @@
     NSInteger lastGesture; // 0, 1, 2, 3 for drag, move, up, down
     
     NSInteger maxMenuIndex;
+    
+    BOOL        tabletsFound;       // vb
 }
 
 - (NSRect) desktopRect;
@@ -299,13 +301,30 @@ void ext_main(void *r)
         tab.contextID = 0; // 0 is an invalid context number
     
     
-    // vb
-    // see if accessibility is enabled
-    NSDictionary *options = @{(id)kAXTrustedCheckOptionPrompt: @YES};
-    BOOL accessibilityEnabled = AXIsProcessTrustedWithOptions((CFDictionaryRef)options);
-    NSLog(@"access?: %d", accessibilityEnabled);
+    // vb, check for permission to use AppleEvents -------------
+    // https://www.felix-schwarz.org/blog/2018/08/new-apple-event-apis-in-macos-mojave
     
-    // ----- end check
+    if (@available(macOS 10.14, *)) {
+        OSStatus status;
+        NSAppleEventDescriptor *targetAppEventDescriptor;
+
+        targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.wacom.tabletDriver"];
+        
+        // errAEEventWouldRequireUserConsent (-1744): user consent is required for this, but the user
+        // has not yet been prompted for it. You need to pass false for askUserIfNeeded to get this.
+        // errAEEventNotPermitted = -1743
+        status = AEDeterminePermissionToAutomateTarget(targetAppEventDescriptor.aeDesc, typeWildCard, typeWildCard, false);
+        
+        NSLog(@"status: %d", status);
+        post("AEEvent status: %d", status);
+        
+        if (status != 0)
+            object_warn((t_object *)x, "Permission to send AppleEvents must be granted, otherwise some features of this object won't work.");
+    } else {
+        // Fallback on earlier versions
+        object_warn((t_object *)x, "Can't check permission to send AppleEvents. The object might or might not work.");
+    }
+    /// ------------- check end, vb
        
     
     selectedMenuIndex = 0; // all tablets
@@ -476,7 +495,7 @@ void ext_main(void *r)
 /** Start polling */
 - (t_max_err) pollMessage
 {
-    if (!polling)
+    if (!polling && tabletsFound)       // vb, avoid crash if no tablets present
     {
         polling = YES;
         // We will watch and log all these events as they come to us.
@@ -509,6 +528,9 @@ void ext_main(void *r)
                                               [self outputValuesFromEvent:theEvent];
                                           }];
         }
+    }
+    else {
+        object_warn(NULL, "s2m.wacom: no tablets found/connectd!");
     }
     return MAX_ERR_NONE;
 }
@@ -927,6 +949,11 @@ void ext_main(void *r)
     if (!polling)
         return;
     
+    NSInteger len = [tablets count];
+//    post("numTablets: %d", len);
+    if (len == 0)
+        return;
+    
     const NSEventType eventType = [theEvent type];
     BOOL isMouseEvent = NO;
     NSPoint s2mMouseLoc;
@@ -1222,26 +1249,6 @@ void ext_main(void *r)
  */
 - (void) getTabletsAndTools
 {
-    // vb, check for permission to use Apple Events -------------
-    // https://www.felix-schwarz.org/blog/2018/08/new-apple-event-apis-in-macos-mojave
-    
-    if (@available(macOS 10.14, *)) {
-        OSStatus status;
-        NSAppleEventDescriptor *targetAppEventDescriptor;
-
-        targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.wacom.tabletDriver"];
-        status = AEDeterminePermissionToAutomateTarget(targetAppEventDescriptor.aeDesc, typeWildCard, typeWildCard, false);
-        // errAEEventWouldRequireUserConsent (-1744): user consent is required for this, but the user has not yet been prompted for it. You need to pass false for askUserIfNeeded to get this.
-        
-        NSLog(@"status: %d", status);
-    } else {
-        // Fallback on earlier versions
-        object_post(NULL, "can't check permission to send Apple Events");
-    }
-    /// ------------- check end, vb
-    
-    
-    
     UInt32 driverTabletCount = 0;
     UInt32 driverTransducerCount = 0;
     UInt32 iTablet = 0;
@@ -1339,6 +1346,15 @@ void ext_main(void *r)
         [tablets addObject:tab];
         [tab release];
     }
+    
+    // vb, we shouldn't try to poll etc. when no tablets are present
+    // this might happen, if we can't talk to the driver (e.g. if AppleEvents are not permitted)
+    if ( ![tablets count]) {
+        object_warn(NULL, "no tablets found!");
+        tabletsFound = NO;
+    } else
+        tabletsFound = YES;
+    // end, vb
     
     maxMenuIndex = tempMenuIndex;
     

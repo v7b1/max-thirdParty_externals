@@ -325,7 +325,7 @@ COPYRIGHT
 	// send the event
 	reply = [event sendExpectingReplyWithPriority:kAEHighPriority 
 												  andTimeout:kTabletDriverAETimeout];
-    NSLog(@"reply: %@", reply);
+//    NSLog(@"reply: %@", reply);
 	// get the reply and return the count
 	return [[reply descriptorForKeyword:keyDirectObject] int32Value];
 }
