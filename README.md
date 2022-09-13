@@ -10,7 +10,7 @@ Get compiled binaries from https://vboehm.net/downloads
 #### List of objects
 
 - 2up_svf~ by Randy Jones
-- analyzer~ by Tristan Jehan et al.
+- analyzer~ by Tristan Jehan et al. (macos only)
 - atari2600~ by Ron Fries and vb (not the version by Kyle Buza, but a re-creation)
 - bob~ by Miller Puckette
 - ca1s by Jhno (John Eichenseer)
@@ -19,7 +19,7 @@ Get compiled binaries from https://vboehm.net/downloads
 - freeverb~ by Olaf Matthes
 - gigaverb~ by Olaf Matthes
 - rufus~ by David Zicarelli
-- s2m.wacom by Charles Gondre (macos only!)
+- s2m.wacom by Charles Gondre (macos only)
 - vinylcontrol~ originally written for PD by Niklas Klügel
 
 For licenses and original README files please check the individual project folders.
