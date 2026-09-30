@@ -18,8 +18,10 @@ Get compiled binaries from https://vboehm.net/downloads
 - fluidsynth~ by Peter Hanappe et al. and Norbert Schnell
 - freeverb~ by Olaf Matthes
 - gigaverb~ by Olaf Matthes
+- paf~ by Miller Puckette
 - rufus~ by David Zicarelli
 - s2m.wacom by Charles Gondre (macos only)
+- slice~ by Nao Tokui
 - vinylcontrol~ originally written for PD by Niklas Klügel
 
 For licenses and original README files please check the individual project folders.
