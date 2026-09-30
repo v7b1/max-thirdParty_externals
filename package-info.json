@@ -1,0 +1,25 @@
+{
+    "name": "max-thirdParty_externals",
+	"author" : "",
+	"description" : "A collection of thrid party externals for max, developed over the years by various authors",
+	"homepatcher" : "",
+	"max_version_min" : "8.0", "max_version_max" : "none",
+	"name" : "@C74_PACKAGE_NAME@",
+	"os" : {
+		"macintosh" : {
+			"platform" : [ "x64", "arm64" ],
+			"min_version" : "none"
+		},
+		"windows" : {
+			"platform" : [ "x64" ],
+			"min_version" : "none"
+		}
+	},
+	"package_extra" : {
+		"reverse_domain" : "net.vboehm",
+		"copyright" : "Copyright (c) 2026 Your Name"
+	},
+	"tags" : ["max", "msp", "third party"],
+	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
+	"website" : "http://vboehm.net/"
+}
