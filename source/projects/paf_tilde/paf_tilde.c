@@ -29,7 +29,7 @@ static char *paf_version = "paf version 0.07";
 #define TABSIZE (1 << LOGTABSIZE)
 #define TABRANGE 3
 
-#include <machine/endian.h>
+//#include <machine/endian.h>
 
 typedef struct _tabpoint
 {
@@ -552,7 +552,7 @@ static void paf_set4x(t_paf *x, double f)
 {
         /* set compatibility with early buggy implementation, useful for
         early Manoury (Partition, Neptune, en Echo). */
-    if (x->x_pafctl.x_4xcompat = (f != 0))
+    if ((x->x_pafctl.x_4xcompat = (f != 0)))
         x->x_pafctl.x_cauchy = 1;
 }
 
