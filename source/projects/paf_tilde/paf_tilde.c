@@ -578,7 +578,7 @@ void ext_main(void *r)
     class_addmethod(paf_class, (method)paf_phase, "phase", A_FLOAT, A_FLOAT, A_FLOAT, 0);
     class_addmethod(paf_class, (method)paf_setcauchy, "cauchy", A_LONG, 0);
     class_addmethod(paf_class, (method)paf_set4x, "4x", A_FLOAT, 0);
-    class_addmethod(paf_class, (method)paf_debug, "debug", 0);
+//    class_addmethod(paf_class, (method)paf_debug, "debug", 0);
     paf_dosetup();
     
     class_dspinit(paf_class);
